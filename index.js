@@ -1,8 +1,8 @@
-// searchapi=https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchedItem}&maxResults=20&key=AIzaSyADoBkrQwQNtPjlhfAqnrW3RY-m5AgqAl8
+// searchapi=https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchedItem}&maxResults=20&key=[your_api_key]
 
 async function fetchResults(){
     var searchedValue= document.getElementById('searchBar').value;
-    var response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchedValue}&maxResults=20&key=AIzaSyDvS_A8sBkGGiMIkfZqrd1JvA98gVN7JjE`);
+    var response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchedValue}&maxResults=20&key=[your_api_key]`);
 
     var result= await response.json();
     // console.log(result.items)
@@ -46,7 +46,7 @@ function displayResults(searchedItems){
 
 
 async function getVideo(videoId){
-    var response = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet,player&id=${videoId}&key=AIzaSyDvS_A8sBkGGiMIkfZqrd1JvA98gVN7JjE`);
+    var response = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet,player&id=${videoId}&key=[your_api_key]`);
 
     var result= await response.json();
 
@@ -59,7 +59,7 @@ async function getVideo(videoId){
 
 
 async function trendingIndia(){
-    var response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=40&regionCode=IN&key=AIzaSyDvS_A8sBkGGiMIkfZqrd1JvA98gVN7JjE`);
+    var response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=40&regionCode=IN&key=[your_api_key]`);
 
     var result= await response.json();
     // console.log(result.items)
